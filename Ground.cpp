@@ -4,13 +4,13 @@
 Ground::Ground()
 {
 	
-
-	setColor(0.43, 0.21, 0.1);
+	setColor(0.18, 0.31, 0.31);
+	
 	primitiveType = GL_QUADS;
-	addVertex(-350, -500);
-	addVertex(-350, -350);
-	addVertex(350, -350);
-	addVertex(350, -500);
+	addVertex(-500, -500);
+	addVertex(-500, -350);
+	addVertex(500, -350);
+	addVertex(500, -500);
 	glPushMatrix();
 	
 }

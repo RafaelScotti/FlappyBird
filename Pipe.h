@@ -1,18 +1,15 @@
 #pragma once
 #include "Object.h"
-#include "stdio.h"
-#include <ctime>
-#include <vector>
-#include <iostream>
+
 
 class Pipe :
 	public Object
 {
 	bool seedFlag = false;
 	int random(int _min, int _max);
-	int pontoBase = random(-100, 500);
-
-
+	int pontoBase = random(-10, 400);
+	int midSpace = 230;
+	
 
 
 
@@ -21,7 +18,7 @@ public:
 	~Pipe();
 
 	void makePipe();
-	void movePipe();
-
+	void movePipe(int speed);
+	void reset();
 };
 

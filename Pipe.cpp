@@ -1,10 +1,7 @@
 #include "Pipe.h"
 
-
-
 int Pipe::random(int _min, int _max)
 {
-
 	{
 		if (!seedFlag)
 		{
@@ -17,64 +14,44 @@ int Pipe::random(int _min, int _max)
 	}
 }
 
-
 void Pipe::makePipe()
 {
-	// primeiro pipe
-	//top
-	pontoBase = random(-100, 300);
+	pontoBase = random(-10, 350);
 	addVertex(350, pontoBase); // 0
 	addVertex(350, 500);
-	addVertex(500, 500);
-	addVertex(500, pontoBase);
+	addVertex(440, 500);
+	addVertex(440, pontoBase);
 	//bottom
-	addVertex(350, pontoBase - 200);
+	addVertex(350, pontoBase - midSpace);
 	addVertex(350, -350);
-	addVertex(500, -350);
-	addVertex(500, pontoBase - 200); // 7
-
-	// segundo pipe
-	//top
-	pontoBase = random(-100, 500);
+	addVertex(440, -350);
+	addVertex(440, pontoBase - midSpace); // 7
+	
+									 // segundo pipe
+									 //top
+	pontoBase = random(-10, 100);
 	addVertex(765, pontoBase); // 8
 	addVertex(765, 500);
-	addVertex(915, 500);
-	addVertex(915, pontoBase);
+	addVertex(855, 500);
+	addVertex(855, pontoBase);
 	//bottom
-	addVertex(765, pontoBase - 200);
+	addVertex(765, pontoBase - midSpace);
 	addVertex(765, -350);
-	addVertex(915, -350);
-	addVertex(915, pontoBase - 200);  // 15
+	addVertex(855, -350);
+	addVertex(855, pontoBase - midSpace);  // 15
+
 }
 
 
-
-void Pipe::movePipe() {
-	////pontoBase = random(-100, 500);
-	//listVertex[0].x--;  // 0
-	//listVertex[1].x--;  // 1
-	//listVertex[2].x--;  // 2
-	//listVertex[3].x--;  // 3
-	//listVertex[4].x--;  // 4
-	//listVertex[5].x--;  // 5
-	//listVertex[6].x--;  // 6 
-	//listVertex[7].x--;  // 7
-	// 
-	//listVertex[8].x--;  // 8
-	//listVertex[9].x--;  // 9
-	//listVertex[10].x--;  // 10
-	//listVertex[11].x--;  // 11
-	//listVertex[12].x--;  // 12
-	//listVertex[13].x--;  // 13
-	//listVertex[14].x--;  // 14
-	//listVertex[15].x--;  // 15
-
+void Pipe::movePipe(int speed) 
+{
 	for (int i = 0; i < listVertex.size();i++) {
-		listVertex[i].x -= 2;
+		listVertex[i].x -= speed;
 	}
-	//pontoBase = random(-100, 300);
 	if (listVertex[0].x < -500) {
-		pontoBase = random(-250, 500);
+
+		pontoBase = random(-10, 400);
+
 		listVertex[0].x += 850 ;  // 0
 		listVertex[1].x += 850;  // 1
 		listVertex[2].x += 850;  // 2
@@ -86,12 +63,12 @@ void Pipe::movePipe() {
 
 		listVertex[0].y = pontoBase;
 		listVertex[3].y = pontoBase;
-
-		listVertex[4].y = pontoBase-200;
-		listVertex[7].y = pontoBase-200;
+		listVertex[4].y = pontoBase - midSpace;
+		listVertex[7].y = pontoBase - midSpace;
 	}
 	if (listVertex[8].x < -500) {
-		pontoBase = random(-100, 500);
+		pontoBase = random(0, 400);
+
 		listVertex[8].x += 850;  // 8
 		listVertex[9].x += 850;  // 9
 		listVertex[10].x += 850;  // 10
@@ -103,22 +80,49 @@ void Pipe::movePipe() {
 
 		listVertex[8].y = pontoBase;
 		listVertex[11].y = pontoBase;
-
-		listVertex[12].y = pontoBase - 200;
-		listVertex[15].y = pontoBase - 200;
+		listVertex[12].y = pontoBase - midSpace;
+		listVertex[15].y = pontoBase - midSpace;
 	}
 
 }
 
+void Pipe::reset() {
+	pontoBase = random(-10, 350);
 
+	listVertex[0].x = 550;  // 0
+	listVertex[0].y = pontoBase;
+	listVertex[1].x = 550;  // 1
+	listVertex[2].x = 640;  // 2
+	listVertex[3].x = 640;  // 3
+	listVertex[3].y = pontoBase;
+	listVertex[4].x = 550;  // 4	
+	listVertex[4].y = pontoBase - midSpace;
+	listVertex[5].x = 550;  // 5
+	listVertex[6].x = 640;  // 6 
+	listVertex[7].x = 640;  // 7
+	listVertex[7].y = pontoBase - midSpace;
+
+	pontoBase = random(-10, 100);
+
+	listVertex[8].x = 965;  // 8
+	listVertex[8].y = pontoBase;
+	listVertex[9].x = 965;  // 9
+	listVertex[10].x = 1055;  // 10
+	listVertex[11].x = 1055;  // 11
+	listVertex[11].y = pontoBase;
+	listVertex[12].x = 965;  // 12
+	listVertex[12].y = pontoBase - midSpace;
+	listVertex[13].x = 965;  // 13
+	listVertex[14].x = 1055;  // 14 
+	listVertex[15].x = 1055;  // 15
+	listVertex[15].y = pontoBase - midSpace;
+}
 
 Pipe::Pipe()
 {
-	setColor(0.68, 1, 0.18);
+	setColor(0.18, 0.31, 0.31);
 	primitiveType = GL_QUADS;
-	
 }
-
 
 Pipe::~Pipe()
 {

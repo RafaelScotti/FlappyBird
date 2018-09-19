@@ -6,7 +6,12 @@
 
 int main(int argc, char**argv)
 {
-	World world(argc, argv, "Flappy Bird - V3.0", 350, 500);
+	
+	World world(argc, argv, "Flappy Bird - V3.0", 350, 450);
+
+
+
+
 	return 0;
 }
 

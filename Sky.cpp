@@ -5,8 +5,8 @@
 Sky::Sky()
 {
 
-	setColor(0.69, 0.77, 0.87);
-	primitiveType = GL_LINE;
+	setColor(0.41, 0.41, 0.41);
+	primitiveType = GL_LINES;
 	addVertex(-350, 500);
 	addVertex(350, 500);
 

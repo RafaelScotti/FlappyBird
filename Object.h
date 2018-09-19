@@ -1,8 +1,11 @@
 #pragma once
-#define GLEW_STATIC
+//#define GLEW_STATIC
 #include "GL\glew.h"
 #include "GL\freeglut.h"
 #include <vector>
+#include "stdio.h"
+#include <ctime>
+#include <iostream>
 using namespace std;
 
 struct Vertex {
@@ -15,6 +18,10 @@ struct Vertex {
 
 class Object
 {
+
+
+	int peso;
+
 protected:
 	int x, y;
 	float colorRGB[3];
@@ -37,8 +44,7 @@ public:
 
 	void draw();
 
-	
-	void colisao();
+
 
 };
 

@@ -1,47 +1,48 @@
 #pragma once
-#include <Windows.h>
-#define GLEW_STATIC
+//#include <Windows.h>
+//#define GLEW_STATIC
 #include "GL\glew.h"
 #include "GL\freeglut.h"
-#include <cmath>
-#include "Object.h"
 
+#include <cmath>
+#include <ctime>
+
+#include "Object.h"
+#include "Ground.h"
+#include "Sky.h"
 #include "Eixo.h"
 #include "Pipe.h"
 #include "Bird.h"
-#include "Ground.h"
-#include "Sky.h"
+#include "Game.h"
+
+class Game;
+class Bird;
+class Ground;
+class Sky;
+class Eixo;
+class Pipe;
 
 class World
-{
-	
-	Eixo meuEixo;
-	Ground ground;
-	Sky sky;
+{	
 	std::string nome;
 	int w, h;
-
-
-	
+		
 public:
-	static std::vector<Object*> objects;
 
-	Object* getObject(int x) {
-		return objects[x];
-	}
+	static Bird b;
+
 	World(int argc, char **argv, std::string nome, int width = 350, int height = 500);
 	~World();
-
-	/*void init();
-	void displayCallback();
-	void inputCallback(int, int, int);
-	void reshapeCallback(int, int);
-	void timerCallback(int);
-	void update();*/
-	
-	
-	
-
-	
+	static void init();	
+	static void inputCallback(int, int, int);
+	static void reshapeCallback(int, int);
+	static void timerCallback(int);
+	static void update();
+	static bool colisao();
+	static bool target();
+	static std::vector<Object*> objects;
+	Object* getObject(int x) {
+		return objects[x];
+	}	
 };
 

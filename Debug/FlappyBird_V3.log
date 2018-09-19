@@ -1,4 +1,4 @@
-﻿  Object.cpp
-c:\users\rafae\desktop\projetocg_ia20182\flappybird_v3\flappybird_v3\object.cpp(32): warning C4018: '<': incompatibilidade de signed/unsigned
-c:\users\rafae\desktop\projetocg_ia20182\flappybird_v3\flappybird_v3\object.cpp(33): warning C4244: 'argumento': conversão de 'int' para 'GLfloat', possível perda de dados
+﻿  Bird.cpp
+c:\users\rafae\desktop\projetocg_ia20182\flappybird_v3\flappybird_v3\bird.cpp(28): warning C4018: '<': incompatibilidade de signed/unsigned
+c:\users\rafae\desktop\projetocg_ia20182\flappybird_v3\flappybird_v3\bird.cpp(45): warning C4018: '<': incompatibilidade de signed/unsigned
   FlappyBird_V3.vcxproj -> C:\Users\rafae\Desktop\ProjetoCG_IA20182\FlappyBird_V3\Debug\FlappyBird_V3.exe
